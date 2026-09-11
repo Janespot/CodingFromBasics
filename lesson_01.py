@@ -1,3 +1,5 @@
+import math 
+
 #Intro to binary and decimal conversions
 decimal = 11
 print("decimal: ", decimal)
@@ -34,3 +36,21 @@ for b in binary:
     b_length -= 1
 
 print("Binary: ", binary, ", Decimal: ", decimal)
+
+# Decimal to binary converter
+decimal = 25
+original_decimal = decimal
+
+binary = "" 
+
+while decimal > 0:
+    remainder = decimal % 2
+
+    binary += str(remainder)
+    # print("decimal: ", decimal, ", remainder: ", remainder, ", binary: ", binary)
+
+    decimal  = math.floor(decimal / 2)
+
+binary = binary[::-1]
+
+print("Decimal: ", original_decimal, ", Binary: ", binary)
