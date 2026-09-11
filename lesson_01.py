@@ -21,21 +21,22 @@ print("Binary: ", binary, ", Decimal: ", decimal)
 
 
 # Binary to decimal converter for any length binary number
-binary = "11011000"
+def binary_to_decimal(binary):
+    b_length = len(binary) - 1
 
-b_length = len(binary) - 1
+    decimal = 0
 
-print(b_length)
+    for b in binary:
 
-decimal = 0
+        power = 2 ** b_length
+        decimal += int(b) * power
+        b_length -= 1
 
-for b in binary:
+    return decimal
 
-    power = 2 ** b_length
-    decimal += int(b) * power
-    b_length -= 1
-
-print("Binary: ", binary, ", Decimal: ", decimal)
+print(binary_to_decimal("1101"))
+print(binary_to_decimal("101"))
+print(binary_to_decimal("0"))
 
 # Decimal to binary converter
 def decimal_to_binary(decimal):
