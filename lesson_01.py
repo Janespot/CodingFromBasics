@@ -1,11 +1,17 @@
 # Binary to decimal converter for any length binary number
 def binary_to_decimal(binary):
+    if binary == "":
+        raise ValueError("Please enter a binary value")
+    
+    for b in binary:
+        if b != "0" and b != "1":
+            raise ValueError("Error! Please enter a valid binary")
+        
     b_length = len(binary) - 1
 
     decimal = 0
 
     for b in binary:
-
         power = 2 ** b_length
         decimal += int(b) * power
         b_length -= 1
@@ -13,8 +19,8 @@ def binary_to_decimal(binary):
     return decimal
 
 print(binary_to_decimal("1101"))
-print(binary_to_decimal("101"))
-print(binary_to_decimal("0"))
+print(binary_to_decimal(""))
+print(binary_to_decimal("1023"))
 
 # Decimal to binary converter
 def decimal_to_binary(decimal):
