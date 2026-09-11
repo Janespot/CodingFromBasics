@@ -18,23 +18,13 @@ def binary_to_decimal(binary):
 
     return decimal
 
-try:
-    print(binary_to_decimal("1101"))
-except ValueError as e:
-    print(e)
-
-try:
-    print(binary_to_decimal(""))
-except ValueError as e:
-    print(e)
-    
-try:
-    print(binary_to_decimal("1023"))
-except ValueError as e:
-    print(e)
-
 # Decimal to binary converter
 def decimal_to_binary(decimal):
+    try:
+        decimal = int(decimal)
+    except ValueError:
+        raise ValueError("Please enter a valid integer")
+
     original_decimal = decimal
 
     binary = "" 
@@ -60,7 +50,24 @@ def decimal_to_binary(decimal):
 
     return binary
 
+selection = input("Please select: Do you want to convert " \
+"\n 1. Binary to Decimal " \
+"\n 2. Decimal to Binary " \
+"\nEnter 1 or 2 then press 'Enter' to continue: ")
 
-print(decimal_to_binary(25))
-print(decimal_to_binary(-20))
-print(decimal_to_binary(0))
+while selection != "1" and selection != "2":
+    selection = input("Invalid choice. Please enter 1 or 2: ")
+
+value_to_convert = input("Please enter a value to convert: ")
+
+if selection == "1":
+    try:
+        print(binary_to_decimal(value_to_convert))
+    except ValueError as e:
+        print(e)
+
+elif selection == "2":
+    try:
+        print(decimal_to_binary(value_to_convert))
+    except ValueError as e:
+        print(e)
