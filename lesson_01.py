@@ -1,4 +1,4 @@
-import math 
+# import math 
 
 #Intro to binary and decimal conversions
 decimal = 11
@@ -38,19 +38,30 @@ for b in binary:
 print("Binary: ", binary, ", Decimal: ", decimal)
 
 # Decimal to binary converter
-decimal = 25
+decimal = -20
 original_decimal = decimal
 
 binary = "" 
 
-while decimal > 0:
+if decimal == 0:
+    binary = "0"
+
+if decimal < 0:
+    decimal = abs(decimal)
+    print(decimal)
+
+while decimal != 0:
+
     remainder = decimal % 2
 
     binary += str(remainder)
-    # print("decimal: ", decimal, ", remainder: ", remainder, ", binary: ", binary)
+    print("decimal: ", decimal, ", remainder: ", remainder, ", binary: ", binary)
 
-    decimal  = math.floor(decimal / 2)
+    decimal  = decimal // 2
 
 binary = binary[::-1]
+
+if original_decimal < 0:
+    binary = "-" + binary
 
 print("Decimal: ", original_decimal, ", Binary: ", binary)
