@@ -18,9 +18,20 @@ def binary_to_decimal(binary):
 
     return decimal
 
-print(binary_to_decimal("1101"))
-print(binary_to_decimal(""))
-print(binary_to_decimal("1023"))
+try:
+    print(binary_to_decimal("1101"))
+except ValueError as e:
+    print(e)
+
+try:
+    print(binary_to_decimal(""))
+except ValueError as e:
+    print(e)
+    
+try:
+    print(binary_to_decimal("1023"))
+except ValueError as e:
+    print(e)
 
 # Decimal to binary converter
 def decimal_to_binary(decimal):
