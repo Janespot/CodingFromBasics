@@ -1,25 +1,3 @@
-# import math 
-
-#Intro to binary and decimal conversions
-decimal = 11
-print("decimal: ", decimal)
-
-binary = 1011
-print("binary: ", binary)
-
-# Binary to decimal converter
-binary = "1011"
-
-decimal = (
-    int(binary[0]) * 8 +
-    int(binary[1]) * 4 +
-    int(binary[2]) * 2 +
-    int(binary[3]) * 1
-)
-
-print("Binary: ", binary, ", Decimal: ", decimal)
-
-
 # Binary to decimal converter for any length binary number
 def binary_to_decimal(binary):
     b_length = len(binary) - 1
