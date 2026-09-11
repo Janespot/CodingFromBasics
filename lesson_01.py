@@ -38,30 +38,33 @@ for b in binary:
 print("Binary: ", binary, ", Decimal: ", decimal)
 
 # Decimal to binary converter
-decimal = -20
-original_decimal = decimal
+def decimal_to_binary(decimal):
+    original_decimal = decimal
 
-binary = "" 
+    binary = "" 
 
-if decimal == 0:
-    binary = "0"
+    if decimal == 0:
+        binary = "0"
 
-if decimal < 0:
-    decimal = abs(decimal)
-    print(decimal)
+    if decimal < 0:
+        decimal = abs(decimal)
 
-while decimal != 0:
+    while decimal != 0:
 
-    remainder = decimal % 2
+        remainder = decimal % 2
 
-    binary += str(remainder)
-    print("decimal: ", decimal, ", remainder: ", remainder, ", binary: ", binary)
+        binary += str(remainder)
 
-    decimal  = decimal // 2
+        decimal  = decimal // 2
 
-binary = binary[::-1]
+    binary = binary[::-1]
 
-if original_decimal < 0:
-    binary = "-" + binary
+    if original_decimal < 0:
+        binary = "-" + binary
 
-print("Decimal: ", original_decimal, ", Binary: ", binary)
+    return binary
+
+
+print(decimal_to_binary(25))
+print(decimal_to_binary(-20))
+print(decimal_to_binary(0))
